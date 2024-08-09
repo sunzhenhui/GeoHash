@@ -129,9 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GeoHashDemo.cpp" />
+    <ClCompile Include="GeoHashGrid.cpp" />
+    <ClCompile Include="GeoHashLine.cpp" />
     <ClCompile Include="GeoHashPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GeoHashGrid.h" />
+    <ClInclude Include="GeoHashLine.h" />
     <ClInclude Include="GeoHashPoint.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

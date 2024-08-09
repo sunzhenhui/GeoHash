@@ -8,7 +8,7 @@ class GeoHashPoint;
 class GeoHashGrid
 {
 public:
-    GeoHashGrid() {}
+    GeoHashGrid() : mdX0(0), mdY0(0), mdWidth(1000), mdHeight(1000) {}
     GeoHashGrid(double dX0, double dY0, double dWidth, double dHeight) : mdX0(dX0), mdY0(dY0), mdWidth(dWidth), mdHeight(dHeight) {}
     GeoHashGrid(double dX0, double dY0, double dEdgeLength) : mdX0(dX0), mdY0(dY0), mdWidth(dEdgeLength), mdHeight(dEdgeLength) {}
     ~GeoHashGrid() {}

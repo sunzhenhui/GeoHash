@@ -8,6 +8,7 @@ class GeoHashPoint
 {
 public:
     GeoHashPoint() : mdX(0.0), mdY(0.0), mdRadius(5.0), mdMaxCoord(1000.0) {}
+    GeoHashPoint(double dX, double dY) : mdX(dX), mdY(dY), mdRadius(5.0), mdMaxCoord(1000.0) {}
     GeoHashPoint(double dX, double dY, double dRadius, double dMaxCoord) : mdX(dX), mdY(dY), mdRadius(dRadius), mdMaxCoord(dMaxCoord) {}
     ~GeoHashPoint() {}
     bool CalculateGeoHash(int nByteLength);                           // 获取 GeoHash 字段值

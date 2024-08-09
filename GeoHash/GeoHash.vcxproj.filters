@@ -21,9 +21,21 @@
     <ClCompile Include="GeoHashPoint.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GeoHashGrid.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GeoHashLine.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeoHashPoint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoHashGrid.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GeoHashLine.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
