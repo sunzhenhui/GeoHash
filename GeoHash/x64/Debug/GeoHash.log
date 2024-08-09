@@ -1,0 +1,7 @@
+﻿  GeoHashDemo.cpp
+D:\Projects\GeoHash\GeoHash\GeoHashPoint.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  GeoHashPoint.cpp
+D:\Projects\GeoHash\GeoHash\GeoHashPoint.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\Projects\GeoHash\GeoHash\GeoHashPoint.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  正在生成代码...
+  GeoHash.vcxproj -> D:\Projects\GeoHash\x64\Debug\GeoHashDemo.exe
