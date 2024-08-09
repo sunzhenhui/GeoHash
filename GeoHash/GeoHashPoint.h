@@ -18,6 +18,7 @@ public:
     bool IsInBuffer(std::string strHash);   // 比较两个哈希值是否一致，判断点是否与目标点临近
     double GetRadius();                     // 获取圆形的半径
     bool GetState();                        // 获取点的状态
+    void SetState(bool bState);             // 设置当前点的状态
 
 private:
     std::string GetBinarySegment(int nSegmentIndex, int nByteLength); // 转换为二进制

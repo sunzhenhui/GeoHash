@@ -27,6 +27,9 @@
     <ClCompile Include="GeoHashLine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Trie.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeoHashPoint.h">
@@ -36,6 +39,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="GeoHashLine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Trie.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,6 @@
 #include "GeoHashLine.h"
 #include "GeoHashPoint.h"
+#include "Trie.h"
 
 #include <cmath>
 #include <utility>
@@ -120,4 +121,88 @@ void GeoHashLine::CalculateGeoHash(int nByteLength)
     {
         mPoints[i].CalculateGeoHash(nByteLength);
     }
+}
+
+void GeoHashLine::FindLineCrossCircle(std::vector<GeoHashPoint> &vPoints, std::unordered_map<std::string, std::vector<int>> &Map)
+{
+    // 找到当前节点直接穿过的点，也就是射线等间隔取点，判断依旧邻近的点（<= dRadius）
+    for (int i = 0; i < mPoints.size(); i++)
+    {
+        std::string strHash = mPoints[i].GetGeoHash();
+        auto it = Map.find(strHash);
+        if (it != Map.end())
+        {
+            for (int j = 0; j < it->second.size(); j++)
+            {
+                vPoints[it->second[j]].SetState(true);
+            }
+            Map.erase(it); // 减少后续判断数据量
+        }
+    }
+}
+
+void GeoHashLine::FindSuspectedLineCrossCircle(std::vector<GeoHashPoint> &vPoints, std::unordered_map<std::string, std::vector<int>> Map)
+{
+    // 这个是筛选疑似穿过的点，也就是所有 [dRadius, dRadius × sqrt(2)] 的点，同时完成最终判断
+    Trie trie;
+    for (const auto &pair : Map)
+    {
+        trie.insert(pair.first, pair.second);
+    }
+
+    // 遍历 mPoints，查找对应的前缀
+    for (int i = 0; i < mPoints.size(); i++)
+    {
+        std::string strHash = mPoints[i].GetGeoHash();
+        std::vector<int> values = trie.findPrefix(strHash);
+        if (!values.empty())
+        {
+            // 前缀一致，处理 values
+            for (int j = 0; j < values.size(); j++)
+            {
+                if (DistanceToRay(vPoints[values[j]].GetX(), vPoints[values[j]].GetX()) < vPoints[values[j]].GetRadius())
+                {
+                    vPoints[values[j]].SetState(true);
+                }
+            }
+        }
+    }
+}
+
+double GeoHashLine::DistanceToRay(double dPointX, double dPointY)
+{
+    // 射线的方向向量
+    double dx = cos(mdAngle);
+    double dy = sin(mdAngle);
+
+    // 计算点到起始点的向量
+    double dapx = dPointX - mdX0; // P - A
+    double dapy = dPointY - mdY0;
+
+    // 计算投影长度
+    double dDotProduct = dapx * dx + dapy * dy; // AP · D
+    double dProjectionLength = dDotProduct;     // 射线的投影长度
+
+    // 计算投影点的坐标
+    double dProjectionX = mdX0 + dProjectionLength * dx;
+    double dProjectionY = mdY0 + dProjectionLength * dy;
+
+    // 计算点到投影点的距离
+    double dDistance = sqrt(pow(dPointX - dProjectionX, 2) + pow(dPointY - dProjectionY, 2));
+    return dDistance;
+}
+
+double GeoHashLine::GetX0()
+{
+    return mdX0;
+}
+
+double GeoHashLine::GetY0()
+{
+    return mdY0;
+}
+
+double GeoHashLine::GetAngle()
+{
+    return mdAngle;
 }

@@ -147,3 +147,8 @@ bool GeoHashPoint::GetState()
 {
     return mbState;
 }
+
+void GeoHashPoint::SetState(bool bState)
+{
+    mbState = bState;
+}

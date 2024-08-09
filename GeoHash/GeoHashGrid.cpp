@@ -84,6 +84,9 @@ void GeoHashGrid::GenerateGeoHash()
         dEdgeLength = dEdgeLength / 2.0;
         nBitNums++;
     }
+    if (nBitNums <= 0)
+        nBitNums = 1;
+
     // 根据需要的 GeoHash 位数生成哈希值
     for (int i = 0; i < mvPoints.size(); i++)
     {
@@ -93,9 +96,28 @@ void GeoHashGrid::GenerateGeoHash()
 
     // 根据 GeoHash 字段初始化哈希表，筛选一定符合要求的点
     mMap.clear();
+    for (int i = 0; i < mvPoints.size(); i++)
+    {
+        std::string strHash = mvPoints[i].GetGeoHash();
+        auto it = mMap.find(strHash);
+        if (it != mMap.end())
+        {
+            // 已经存在，直接添加至列表
+            it->second.push_back(i);
+        }
+        else
+        {
+            // 添加新的哈希键值对
+            mMap[strHash] = std::vector<int>(1, i);
+        }
+    }
 
     // 计算距离阈值，其中 <= dRadius (即 GeoHash 字段完全对应的圆形) 一定符合标准，[dRadius, dRadius × sqrt(2)] 的圆形可能符合标准，> dRadius 一定不符合标准
-    nBitNums = 0;
+    // 找到 <= dRadius (即 GeoHash 字段完全对应的圆形)
+    mpLine->FindLineCrossCircle(mvPoints, mMap);
+
+    // 更新 GeoHash 字符长度
+    nBitNums = -1; // 这里相当于向上取整，识别出来的字符串可能大于 dRadius × sqrt(2)，保证覆盖到所有 [dRadius, dRadius × sqrt(2)] 的点
     dEdgeLength = mdHeight >= mdWidth ? mdHeight : mdWidth;
     dRadius = dRadius * sqrt(2);
     while (dEdgeLength >= dRadius)
@@ -103,10 +125,34 @@ void GeoHashGrid::GenerateGeoHash()
         dEdgeLength = dEdgeLength / 2.0;
         nBitNums++;
     }
+    if (nBitNums <= 0)
+        nBitNums = 1;
 
     mpLine->CalculateGeoHash(nBitNums);
+    // 找到 [dRadius, dRadius × sqrt(2)] 的圆形
+    mpLine->FindSuspectedLineCrossCircle(mvPoints, mMap);
+}
 
-    // 根据 GeoHash 字段初始化哈希表，便于快速筛选
-    mMap.clear();
+void GeoHashGrid::FindLineCrossCircle()
+{
+    GenerateGeoHash();
+}
 
+GeoHashLine *GeoHashGrid::GetLine()
+{
+    return mpLine;
+}
+
+void GeoHashGrid::OutputCircles()
+{
+    std::cout << "Grid (" << mdX0 << "," << mdY0 << "," << mdX0 + mdWidth << "," << mdY0 + mdHeight << ")" << std::endl;
+    std::cout << "Line (" << mpLine->GetX0() << "," << mpLine->GetY0() << "), Angle:" << mpLine->GetAngle() << std::endl;
+    for (int i = 0; i < mvPoints.size(); i++)
+    {
+        if (mvPoints[i].GetState())
+        {
+            std::cout << "(" << mvPoints[i].GetX() << "," << mvPoints[i].GetY() << ") ";
+        }
+    }
+    std::cout << std::endl;
 }

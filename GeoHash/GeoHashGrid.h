@@ -18,13 +18,16 @@ public:
     void GeneratePoints(int nPointNum); // 生成固定数目的圆形
     void GenerateLine();                // 生成原点位于正方形区域外，但是穿过该区域的射线
     void GenerateGeoHash();             // 生成所有圆形与射线所有节点的 GeoHash 值，用于快速筛选距离少于阈值的圆形
+    void FindLineCrossCircle();         // 查找所有射线穿过的圆形
+    GeoHashLine *GetLine();             // 获得生成的随机射线
+    void OutputCircles();               // 输出所有符合要求的圆形
 
 private:
-    double mdX0, mdY0;                         // 原点坐标
-    double mdWidth, mdHeight;                  // 矩形区域的宽和高
-    std::vector<GeoHashPoint> mvPoints;        // 矩形范围区域内所有圆形
-    int mnCircleCount;                         // 矩形范围区域内所有圆形的数目
-    GeoHashLine *mpLine = nullptr;             // 原点位于正方形区域外，但是穿过该区域的射线
-    std::unordered_map<std::string, int> mMap; // 用于存储 GeoHash 与对应节点的键值对，便于快速筛选小于固定阈值的圆形
-    std::vector<GeoHashPoint> mvLinePoints;    // 线段上的等间隔点
+    double mdX0, mdY0;                                      // 原点坐标
+    double mdWidth, mdHeight;                               // 矩形区域的宽和高
+    std::vector<GeoHashPoint> mvPoints;                     // 矩形范围区域内所有圆形
+    int mnCircleCount;                                      // 矩形范围区域内所有圆形的数目
+    GeoHashLine *mpLine = nullptr;                          // 原点位于正方形区域外，但是穿过该区域的射线
+    std::unordered_map<std::string, std::vector<int>> mMap; // 用于存储 GeoHash 与对应节点的键值对，便于快速筛选小于固定阈值的圆形
+    std::vector<GeoHashPoint> mvLinePoints;                 // 线段上的等间隔点
 };
