@@ -137,3 +137,8 @@ std::string GeoHashPoint::EncodeBase32(const std::string &binaryString)
 
     return base32String;
 }
+
+double GeoHashPoint::GetRadius()
+{
+    return mdRadius;
+}

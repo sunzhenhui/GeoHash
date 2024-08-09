@@ -19,6 +19,7 @@ public:
     std::string GetBinarySegment(int nSegmentIndex, int nByteLength); // 转换为二进制
     int GetSegmentIndex(double dX, int nByteLength);                  // 获取分段索引，判断当前位于第几段
     std::string EncodeBase32(const std::string &binaryString);        // GeoHash 编码
+    double GetRadius();                                               // 获取圆形的半径
 
 private:
     double mdX = 0.0;

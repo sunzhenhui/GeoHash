@@ -106,10 +106,10 @@ void GeoHashLine::GenerateIntervalPoints(double dRadius, double dXMin, double dY
     }
 
     // 生成等间距的点，从1开始，以避免重复交点
-    for (int i = 1; i <= nPointsCount; ++i)
+    for (int i = 1; i <= nPointsCount; i++)
     {
-        double newX = dStartX + i * dRadius * dx;
-        double newY = dStartY + i * dRadius * dy;
-        mPoints.emplace_back(GeoHashPoint(newX, newY));
+        double _X = dStartX + i * dRadius * dx;
+        double _Y = dStartY + i * dRadius * dy;
+        mPoints.emplace_back(GeoHashPoint(_X, _Y));
     }
 }
