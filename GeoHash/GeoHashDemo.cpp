@@ -5,7 +5,7 @@
 #include "GeoHashGrid.h"
 #include "GeoHashLine.h"
 
-#define M_PI 3.1415926535
+#include <corecrt_math_defines.h>
 
 int main()
 {

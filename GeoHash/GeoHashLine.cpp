@@ -113,3 +113,11 @@ void GeoHashLine::GenerateIntervalPoints(double dRadius, double dXMin, double dY
         mPoints.emplace_back(GeoHashPoint(_X, _Y));
     }
 }
+
+void GeoHashLine::CalculateGeoHash(int nByteLength)
+{
+    for (int i = 0; i < mPoints.size(); i++)
+    {
+        mPoints[i].CalculateGeoHash(nByteLength);
+    }
+}

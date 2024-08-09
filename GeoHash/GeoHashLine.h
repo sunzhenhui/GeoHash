@@ -13,6 +13,7 @@ public:
     ~GeoHashLine() {}
     std::pair<double, double> Intersect(double dXMin, double dYMin, double dXMax, double dYMax);         // 计算射线与正方形区域的交点
     void GenerateIntervalPoints(double dRadius, double dXMin, double dYMin, double dXMax, double dYMax); // 从最近的交点开始，沿着射线方向生成等间距的间隔点
+    void CalculateGeoHash(int nByteLength);                                                              // 获取 GeoHash 字段值
 
 private:
     double mdX0, mdY0;                 // 原点坐标

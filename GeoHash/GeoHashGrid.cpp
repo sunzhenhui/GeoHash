@@ -63,11 +63,50 @@ void GeoHashGrid::GenerateLine()
         if (!std::isnan(intersection.first) && !std::isnan(intersection.second))
         {
             bValidLine = true;
-            if(mpLine){
+            if (mpLine)
+            {
                 delete mpLine;
                 mpLine = nullptr;
             }
             mpLine = new GeoHashLine(dX0, dY0, angle);
         }
     }
+}
+
+void GeoHashGrid::GenerateGeoHash()
+{
+    // 这里需要根据圆形的半径计算所需要的 GeoHash 位数，这个位数必须为 2 的 n 次方，用于生成 GeoHash 字符串
+    double dRadius = mvPoints[0].GetRadius();
+    double dEdgeLength = mdHeight >= mdWidth ? mdHeight : mdWidth;
+    int nBitNums = 0;
+    while (dEdgeLength >= dRadius)
+    {
+        dEdgeLength = dEdgeLength / 2.0;
+        nBitNums++;
+    }
+    // 根据需要的 GeoHash 位数生成哈希值
+    for (int i = 0; i < mvPoints.size(); i++)
+    {
+        mvPoints[i].CalculateGeoHash(nBitNums);
+    }
+    mpLine->CalculateGeoHash(nBitNums);
+
+    // 根据 GeoHash 字段初始化哈希表，筛选一定符合要求的点
+    mMap.clear();
+
+    // 计算距离阈值，其中 <= dRadius (即 GeoHash 字段完全对应的圆形) 一定符合标准，[dRadius, dRadius × sqrt(2)] 的圆形可能符合标准，> dRadius 一定不符合标准
+    nBitNums = 0;
+    dEdgeLength = mdHeight >= mdWidth ? mdHeight : mdWidth;
+    dRadius = dRadius * sqrt(2);
+    while (dEdgeLength >= dRadius)
+    {
+        dEdgeLength = dEdgeLength / 2.0;
+        nBitNums++;
+    }
+
+    mpLine->CalculateGeoHash(nBitNums);
+
+    // 根据 GeoHash 字段初始化哈希表，便于快速筛选
+    mMap.clear();
+
 }

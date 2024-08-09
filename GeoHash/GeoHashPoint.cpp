@@ -142,3 +142,8 @@ double GeoHashPoint::GetRadius()
 {
     return mdRadius;
 }
+
+bool GeoHashPoint::GetState()
+{
+    return mbState;
+}
