@@ -23,7 +23,7 @@ int main()
     // 生成随机穿过区域的射线
     grid.GenerateLine();
     // 获取射线的间隔点
-    grid.GetLine()->GenerateIntervalPoints(5, 0, 0, 1000, 1000);
+    grid.GetLine()->GenerateIntervalPoints(1, 0, 0, 1000, 1000);
     // 查找所有射线穿过的圆形
     grid.FindLineCrossCircle();
     // 输出所有符合要求的圆形

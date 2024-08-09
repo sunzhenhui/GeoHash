@@ -15,21 +15,21 @@
       "RelativeMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|solutionrelative:GeoHash\\GeoHashLine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\PROFESSIONAL\\VC\\TOOLS\\MSVC\\14.37.32822\\INCLUDE\\XHASH||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\PROFESSIONAL\\VC\\TOOLS\\MSVC\\14.37.32822\\INCLUDE\\TYPE_TRAITS||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\PROFESSIONAL\\VC\\TOOLS\\MSVC\\14.37.32822\\INCLUDE\\XSTRING||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|D:\\Projects\\GeoHash\\GeoHash\\GeoHashGrid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|solutionrelative:GeoHash\\GeoHashGrid.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|D:\\Projects\\GeoHash\\GeoHash\\GeoHashPoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1E77C418-22F6-42E0-8D39-C64D41642A19}|GeoHash\\GeoHash.vcxproj|solutionrelative:GeoHash\\GeoHashPoint.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xhash||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xstring||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\type_traits||{3B902123-F8A7-4915-9F01-361F908088D0}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,40 +43,37 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "xhash",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xhash",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xhash",
               "ViewState": "AQIAAFQEAAAAAAAAAAAAAGUEAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-09T07:09:47.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T07:09:47.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "xstring",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xstring",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\xstring",
               "ViewState": "AQIAAPoTAAAAAAAAAAAAAAsUAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-09T07:09:45.119Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T07:09:45.119Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "type_traits",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\type_traits",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.37.32822\\include\\type_traits",
               "ViewState": "AQIAADkJAAAAAAAAAAAAAFcJAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-09T07:09:31.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T07:09:31.818Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "GeoHashPoint.cpp",
               "DocumentMoniker": "D:\\Projects\\GeoHash\\GeoHash\\GeoHashPoint.cpp",
               "RelativeDocumentMoniker": "GeoHash\\GeoHashPoint.cpp",
@@ -84,12 +81,11 @@
               "RelativeToolTip": "GeoHash\\GeoHashPoint.cpp",
               "ViewState": "AQIAAHgAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-09T03:16:25.151Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T03:16:25.151Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "GeoHashGrid.cpp",
               "DocumentMoniker": "D:\\Projects\\GeoHash\\GeoHash\\GeoHashGrid.cpp",
               "RelativeDocumentMoniker": "GeoHash\\GeoHashGrid.cpp",
@@ -97,8 +93,7 @@
               "RelativeToolTip": "GeoHash\\GeoHashGrid.cpp",
               "ViewState": "AQIAADMAAAAAAAAAAAAAAD0AAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-09T03:16:18.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T03:16:18.794Z"
             },
             {
               "$type": "Document",
@@ -110,8 +105,7 @@
               "RelativeToolTip": "GeoHash\\GeoHashPoint.h",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-08-09T02:37:50.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T02:37:50.138Z"
             },
             {
               "$type": "Document",
@@ -123,8 +117,7 @@
               "RelativeToolTip": "GeoHash\\GeoHashLine.cpp",
               "ViewState": "AQIAAHoAAAAAAAAAAAAAAIoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-08-09T02:37:02.925Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T02:37:02.925Z"
             },
             {
               "$type": "Document",
@@ -134,7 +127,7 @@
               "RelativeDocumentMoniker": "GeoHash\\GeoHashDemo.cpp",
               "ToolTip": "D:\\Projects\\GeoHash\\GeoHash\\GeoHashDemo.cpp",
               "RelativeToolTip": "GeoHash\\GeoHashDemo.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-08-08T08:06:40.722Z",
               "EditorCaption": ""

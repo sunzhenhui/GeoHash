@@ -160,7 +160,7 @@ void GeoHashLine::FindSuspectedLineCrossCircle(std::vector<GeoHashPoint> &vPoint
             // 前缀一致，处理 values
             for (int j = 0; j < values.size(); j++)
             {
-                if (DistanceToRay(vPoints[values[j]].GetX(), vPoints[values[j]].GetX()) < vPoints[values[j]].GetRadius())
+                if (DistanceToRay(vPoints[values[j]].GetX(), vPoints[values[j]].GetY()) < vPoints[values[j]].GetRadius())
                 {
                     vPoints[values[j]].SetState(true);
                 }

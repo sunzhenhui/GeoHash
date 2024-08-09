@@ -10,6 +10,7 @@ void Trie::insert(const std::string &key, const std::vector<int> &values)
             node->children[c] = new TrieNode();
         }
         node = node->children[c];
+        node->values = values; // 存储值
     }
     node->values = values; // 存储值
 }
